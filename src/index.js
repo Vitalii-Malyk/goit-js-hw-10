@@ -1,4 +1,4 @@
-import { fetchBreeds, fetchCatByBreed } from './cat-api';
+import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 
@@ -20,9 +20,7 @@ function onBreedSelect(event) {
     })
     .catch(error => {
       Notiflix.Loading.remove();
-      Notiflix.Notify.failure(
-        'Oops! Something went wrong! Try reloading the page!'
-      );
+      Notiflix.Notify.failure('Error, please reload the page!');
     });
 }
 
@@ -66,7 +64,5 @@ breedsPr
   })
   .catch(() => {
     Notiflix.Loading.remove();
-    Notiflix.Notify.failure(
-      'Oops! Something went wrong! Try reloading the page!'
-    );
+    Notiflix.Notify.failure('Something went wrong! Try reloading the page!');
   });
